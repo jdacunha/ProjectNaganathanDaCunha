@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import Test from "./components/Test/test2";
 import MatchList from "./components/Matches/test";
+import Login from "./components/Login/login"; 
 
 function App() {
   return (
@@ -11,10 +12,12 @@ function App() {
       <header className="App-header">
         <nav>
           <Link to="/">Home</Link>
+          <Link to="/login">Login</Link>
           <Link to="/test">Test</Link>
           <Link to="/matchs">Matchs</Link>
         </nav>
         <Routes>
+          <Route path="/login" element={<Login />} />
           <Route path="/test" element={<Test />} />
           <Route path="/matchs" element={<MatchList />} />
           <Route path="/" element={<Home />} />

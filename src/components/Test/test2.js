@@ -3,7 +3,7 @@ import './test2.css';
 
 function Testbutton() {
   function handleClick() {
-    alert('Le lien a été cliqué.');
+    alert('Le bouton a été cliqué.');
   }
 
   return (
