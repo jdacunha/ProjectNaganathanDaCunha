@@ -12,20 +12,27 @@ function MatchList() {
       .then((data) => setMatchs(data));
   }, []);
   return (
-
     <ul>
       {matchs === undefined && <span>Loading...</span>}
       {matchs?.length === 0 && <span>No data</span>}
-      {matchs?.map((match) => (
-        <li>{
-          //match.user1.username + " VS " + match.user2.username
-        match._id
-        }
-        </li> 
-      ))}
-      {matchs?.username === 0 && <span>No data</span>}
+
+       {matchs?.map((match) => 
+        {        
+          if(match.user2)
+          return ( 
+            <ul>
+
+             <li> {match.user1.username}<span> VS </span>{match.user2.username} </li> 
+           </ul>)
+          else
+          {
+            return match.user1.username + " VS ? "
+          }
+      })}
     </ul>
-  );
+
+  )
+
 }
 
 

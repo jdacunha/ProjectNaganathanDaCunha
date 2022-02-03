@@ -8,7 +8,7 @@ function Test() {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("token"),
       },
-      method: 'DELETE', 
+      method: 'POST', 
       mode: 'cors'
       
     })
