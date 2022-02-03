@@ -5,24 +5,28 @@ import { Link, Route, Routes } from "react-router-dom";
 import Test from "./components/Test/test2";
 import MatchList from "./components/Matches/test";
 import Login from "./components/Login/login"; 
+import HomeIcon from '@mui/icons-material/Home';
+import ListIcon from '@mui/icons-material/List';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import SettingsIcon from '@mui/icons-material/Settings';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <nav>
-          <Link to="/">Home</Link>
-          <Link to="/login">Login</Link>
-          <Link to="/test">Test</Link>
-          <Link to="/matchs">Matchs</Link>
+          <Link to="/"> <HomeIcon> </HomeIcon> <span> Home </span> </Link> 
+          <Link to="/test"> <SettingsIcon></SettingsIcon> <span> Test </span> </Link>
+          <Link to="/matchs"> <ListIcon> </ListIcon> <span> Matchs </span> </Link>
+          <Link to="/login" className='BoutonLogin'> <AccountCircleIcon> </AccountCircleIcon> <span> Login </span> </Link>
         </nav>
-        <Routes>
+      </header>
+      <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/test" element={<Test />} />
           <Route path="/matchs" element={<MatchList />} />
           <Route path="/" element={<Home />} />
         </Routes>
-      </header>
     </div>
   );
 }

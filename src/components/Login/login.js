@@ -2,6 +2,7 @@ import { useState } from "react";
 import TextField from '@mui/material/TextField';
 import jwtDecode from "jwt-decode";
 import { Route } from 'react-router-dom';
+import './login.css';
 
 /* function login() {
     return(
@@ -45,27 +46,46 @@ function Login() {
     <><span>Already Logged</span><button onClick={Logout}> Logout </button></>
     //<span> Already logged</span>
   ) : (
-    <form onSubmit={handleSubmit}>
-      <input name="username" value={values.username} onChange={handleChange} />
-      <input
-        type="password"
-        name="password"
-        value={values.password}
-        onChange={handleChange}
-      />
-      <input type="submit" value="Login" />
-    </form>
+
+    <div className="main-login"> 
+
+      <div className="carte"> 
+
+      <div className="carte-header"> 
+          <span> Se Connecter : </span>
+      </div>
+
+      <div className="carte-body"> 
+
+          <form onSubmit={handleSubmit}>
+            <span> Username : </span>
+          <input name="username" value={values.username} onChange={handleChange} />
+          <span> Password : </span>
+          <input
+            type="password"
+            name="password"
+            value={values.password}
+            onChange={handleChange}
+          />
+          <input type="submit" value="Login" className="LoginConfirm" />
+        </form>
+
+      </div>
+      
+      
+
+      </div>
+
+    </div>
+    
+    
   );
 }
 
 function Logout() {
   localStorage.clear('token');
 
-  <Route render={({ history}) => (
-      history.push("/")
-    )}> </Route>
-
-    window.location.href = '/';
+  window.location.href = '/';
 
 } 
 

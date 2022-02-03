@@ -1,0 +1,38 @@
+.main-login {
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc( 100vh - 80px);
+}
+
+.carte {
+    background: #fff;
+    border: 2px solid #f0f0f0;
+    border-radius: 10px;
+    min-width: 400px;
+}
+
+.carte-header {
+    display: flex;
+    padding: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.carte-body {
+    padding: 1rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+.carte-body form {
+    display: grid;
+    grid-template-columns: 3fr 6fr;
+}
+
+.LoginConfirm {
+    width: 60px;
+    margin-left: 154px;
+    margin-top: 10px;
+    grid-column-end: span 2;
+    padding: 2px;
+}
