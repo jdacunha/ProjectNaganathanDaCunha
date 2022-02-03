@@ -1,19 +1,27 @@
   
 import React, { useState } from "react";
-import './test2.css';
+
+function handleDeleteItem() {
+
+  fetch("http://localhost:3000/matches/61fab3f8e30ebceab98ce549",{
+    method: "DELETE",
+  }).then((response) => {
+    if (response.status === 404) {
+      alert("Match not found");
+    } else {
+      alert("Match deleted");
+    }
+  });
+}
 
 function Testbutton() {
-  function handleClick() {
-    alert('Le bouton a été cliqué.');
-  }
-
+  
   return (
-    <button onClick={handleClick} id="boutontest">
+    <button onClick={handleDeleteItem} id="boutontest">
       Bouton Test
     </button>
   );
 }
-
 
 
 
