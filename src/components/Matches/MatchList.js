@@ -26,7 +26,7 @@ function MatchList() {
            </ul>)
           else
           {
-            return match.user1.username + " VS ? "
+            return match.user1.username + " VS ??? "
           }
       })}
     </ul>
@@ -35,7 +35,37 @@ function MatchList() {
 
 }
 
+function Test() {
+
+
+  function handleClick() {
+    
+    fetch('http://fauques.freeboxos.fr:3000/matches', {  
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      },
+      method: 'POST', 
+      mode: 'cors'
+      
+    })
+    window.location.href = '/matchs';
+  }
+
+  return (
+    <button onClick={handleClick} style={{
+      textAlign: 'center',
+      width: '100px',
+      border: '1px solid gray',
+      borderRadius: '5px'
+    }}>
+      Create a game
+    </button>
+  );
+
+}
+
 
 
 
 export default MatchList  ;
+export {Test};
