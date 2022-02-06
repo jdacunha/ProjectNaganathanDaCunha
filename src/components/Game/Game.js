@@ -1,8 +1,8 @@
-import { responsiveFontSizes } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom'
+import './Game.css';
 
-function CurrentMatch() {
+function Match() {
     const [match,setMatch] = useState();
     const {id} =useParams();
     const [loading,setLoading] = useState(true);
@@ -20,11 +20,20 @@ function CurrentMatch() {
 
     
     function handleClick(move) {
-        let turn = 1;
-        if (localStorage.getItem("turn_id") == '4') {
-            localStorage.setItem("turn_id", 1);
+        
+        let turn = 0;
+        if (match.turns[match.turns.length - 1]?.winner) {
+          turn = match.turns.length + 1;
         }
-        localStorage.getItem("turn_id") ? (turn = localStorage.getItem("turn_id")) : (localStorage.setItem("turn_id", 1));
+        else {
+          if(match.turns.length == 0) {
+            turn = 1
+          }
+          else {
+            turn = match.turns.length;
+          }
+          
+        }
         
         fetch("http://fauques.freeboxos.fr:3000/matches/" + id + "/turns/" + turn, {  
           headers: {
@@ -34,14 +43,6 @@ function CurrentMatch() {
           method: 'POST', 
           body: JSON.stringify({ "move": move })
         })
-        .then( response => {
-            if (response.status == 202) {
-                let temp = Number(localStorage.getItem("turn_id"))
-                localStorage.setItem("turn_id", temp + 1 )
-                
-            }
-            throw response
-        })
         
     };
 
@@ -50,9 +51,14 @@ if(loading) {
 }
 return (
 <> 
-    <div>  {match._id} </div>
+  <div className="match-container">
+
+    <div className="match-cont-id">  Match ID : {match._id} </div>
+
     <div> {match.user1.username} vs {match.user2.username} </div>
 
+    <div> Turn : {match.turns.length}/3 </div>
+    
     <button onClick={() => handleClick("rock")} style={{
       textAlign: 'center',
       width: '100px',
@@ -77,10 +83,12 @@ return (
     }}>
       Scissors
     </button>
+
+  </div>
+    
 </>
 )
 
 }
 
-
-export default CurrentMatch;
+export default Match;
