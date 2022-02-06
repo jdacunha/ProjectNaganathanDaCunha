@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useParams } from 'react';
 import './test2.css';
 
-/* function PierreFeuilleCiseaux() {
+function PierreFeuilleCiseaux() {
 
   function handleClick(move) {
     fetch('http://fauques.freeboxos.fr:3000/matches/61fcf971e30ebceab98d95ae/turns/1', {  
@@ -44,27 +44,8 @@ import './test2.css';
     </>
     
   );
-} */
+} 
 
 
-function Test3() {
-  const [count, setCount] = useState(0);
 
- /*  useEffect(() => {
-    // Met à jour le titre du document via l’API du navigateur
-    document.title = `Vous avez cliqué ${count} fois`;
-  }); */
-
-  return count == 0 ? (
-    <div>
-      <p>Vous avez cliqué {count} fois</p>
-      <button onClick={() => setCount(count + 1)}>
-        Cliquez ici
-      </button>
-    </div>
-  ) : (
-    <div> J'ai arrêté de compter wola</div>
-  );
-}
-
-export default Test3;
+export default PierreFeuilleCiseaux;
