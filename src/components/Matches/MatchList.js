@@ -19,11 +19,9 @@ function MatchList() {
        {matchs?.map((match) => 
         {        
           if(match.user2)
-          return ( 
-            <ul>
-
-             <li> {match.user1.username}<span> VS </span>{match.user2.username} </li> 
-           </ul>)
+          return (       
+             <li> {match.user1.username}<span> VS </span>{match.user2.username}  <span>ID:</span>  {match._id} </li> 
+           )
           else
           {
             return match.user1.username + " VS ??? "
@@ -63,6 +61,7 @@ function Test() {
   );
 
 }
+
 
 
 

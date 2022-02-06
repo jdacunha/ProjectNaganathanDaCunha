@@ -8,7 +8,9 @@ import { Link, Route, Routes } from "react-router-dom";
 //import Test from "./components/Test/test2";
 import MatchList, {Test} from "./components/Matches/MatchList";
 import Login from "./components/Login/Login";
-import PierreFeuilleCiseaux from "./components/Game/PierreFeuilleCiseaux"
+import Rock from "./components/Game/Rock"
+import Paper from "./components/Game/Paper"
+import Scissors from "./components/Game/Scissors"
 //import Test from "./components/Test/test2";
 
 
@@ -30,8 +32,8 @@ class App extends Component {
         </header>
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route path="/test" element={<PierreFeuilleCiseaux />} />
-          <Route path="/matchs" element={<><MatchList/><Test/></>} />
+          <Route path="/test" element={<><Rock/><Paper/><Scissors/></>} />
+          <Route path="/matchs" element={<><Test/><MatchList/></>} />
           <Route path="/" element={<Home />} />
         </Routes>
     </div>
