@@ -3,12 +3,14 @@ import './App.css';
 import { useState } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import Test from "./components/Test/test2";
-import MatchList from "./components/Matches/test";
+import MatchList, {AddMatch} from "./components/Matches/MatchList";
 import Login from "./components/Login/login"; 
 import HomeIcon from '@mui/icons-material/Home';
 import ListIcon from '@mui/icons-material/List';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SettingsIcon from '@mui/icons-material/Settings';
+
+
 
 function App() {
   return (
@@ -24,7 +26,8 @@ function App() {
       <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/test" element={<Test />} />
-          <Route path="/matchs" element={<MatchList />} />
+          <Route path="/matchs" element={<><AddMatch/><MatchList/></>} />
+          <Route path="/match/:id" element={<Test />} />
           <Route path="/" element={<Home />} />
         </Routes>
     </div>

@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: calc( 100vh - 80px);
+    padding-top: 25vh;
 }
 
 .carte {
@@ -26,7 +26,11 @@
 
 .carte-body form {
     display: grid;
-    grid-template-columns: 3fr 6fr;
+    grid-template-columns: 2.5fr 6fr;
+}
+
+.carte-body form span {
+    text-align: start;
 }
 
 .LoginConfirm {
@@ -35,4 +39,23 @@
     margin-top: 10px;
     grid-column-end: span 2;
     padding: 2px;
+}
+
+.main-logout {
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 25vh;
+}
+
+.carte-header-logout {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.ButtonLogout {
+    margin: 1rem;
 }

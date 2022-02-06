@@ -3,6 +3,9 @@
 }
 
 .App-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
   background-color: #004dff;
   min-height: 80px;
   display: flex;
@@ -14,6 +17,8 @@
   padding: 0px;
   margin: 0px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 99;
+
 }
 
 .App-link {
@@ -25,9 +30,10 @@ nav {
 }
 
 .BoutonLogin {
-  position: fixed;
+  /* position: fixed;
   right: 0px;
-  top: 0px;
+  top: 0px; */
+  padding-left: calc(100% - 500px);
 }
 
 nav a {

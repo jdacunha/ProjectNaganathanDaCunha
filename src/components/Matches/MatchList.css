@@ -1,0 +1,25 @@
+.ButtonContainer {
+    margin-top: 100px;
+    margin-left: 30%;
+}
+
+.ListContainer {
+    background: #fff;
+    border: 2px solid #f0f0f0;
+    border-radius: 10px;
+    min-width: 400px;
+    margin-top: 15px;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.liMatchlist {
+    text-align: start;
+}
+
+.match-id {
+    float: right;
+    margin-right: 15px;
+    color: black;
+}
+

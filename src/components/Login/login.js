@@ -1,5 +1,6 @@
 import { useState } from "react";
 import TextField from '@mui/material/TextField';
+import ButtonMUI from '@mui/material/Button';
 import jwtDecode from "jwt-decode";
 import { Route } from 'react-router-dom';
 import './login.css';
@@ -40,11 +41,21 @@ function Login() {
         localStorage.setItem("token", data.token);
         setUser(data.token);
         console.log(jwtDecode(data.token));
-      });
+      })
   }
   return user ? (
-    <><span>Already Logged</span><button onClick={Logout}> Logout </button></>
-    //<span> Already logged</span>
+    <>
+      <div className="main-logout">
+        <div className="carte">
+          <span className="carte-header-logout">You are already Logged</span>
+          <ButtonMUI variant="contained" onClick={Logout} sx={{
+        color: 'white',
+        margin: 2,
+        }}> Logout </ButtonMUI>
+        </div>
+        
+      </div>
+    </>
   ) : (
 
     <div className="main-login"> 
@@ -52,7 +63,7 @@ function Login() {
       <div className="carte"> 
 
       <div className="carte-header"> 
-          <span> Se Connecter : </span>
+          <span> Sign in : </span>
       </div>
 
       <div className="carte-body"> 
@@ -67,7 +78,15 @@ function Login() {
             value={values.password}
             onChange={handleChange}
           />
-          <input type="submit" value="Login" className="LoginConfirm" />
+          {/* <input type="submit" value="Login" className="LoginConfirm" /> */}
+
+          <ButtonMUI type="submit" variant="contained" sx={{
+        color: 'white',
+        marginTop: '12px',
+        marginLeft: '25%',
+        marginRight: '25%',
+        gridColumnEnd: 'span 2',
+        }}> Login </ButtonMUI> 
         </form>
 
       </div>
